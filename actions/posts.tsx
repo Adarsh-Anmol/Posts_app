@@ -3,6 +3,7 @@
 import { storePost, updatePostLikeStatus } from "@/lib/posts";
 import { redirect } from "next/navigation";
 import {uploadImage} from "@/lib/cloudinary"
+import { revalidatePath } from "next/cache";
 
 
 interface PostState {
@@ -53,4 +54,5 @@ export async function createPost(state : PostState,formData: FormData){
 
   export async function togglePostLikeStatus(postId: string){
     updatePostLikeStatus(postId, 2);
+    revalidatePath('/', 'layout');
   }
