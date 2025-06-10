@@ -2,11 +2,13 @@
 
 import { useActionState } from "react";
 import FormSubmit from '@/components/form-submit'
-import { CodeAction } from "typescript";
+
 
 interface PostFormProps {
   action: (state: { errors: string[] }, formData: FormData) => Promise<{ errors: string[] }>;
 }
+
+
 export default function Postform({action}:PostFormProps){
     const[state, formAction] = useActionState(action, {errors: []})
 

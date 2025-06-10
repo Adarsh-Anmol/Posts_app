@@ -7,7 +7,8 @@ export default function FormSubmit(){
     if(status.pending){
         return(
             <>
-            <p>Creating Post... </p>
+            <span>Creating Post... </span>
+            {/* Used span here to prevent hydration error*/}
             </>
         )
     }
