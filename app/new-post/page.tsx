@@ -1,4 +1,4 @@
-import { createPost } from "@/actions/post";
+import { createPost } from "@/actions/posts";
 import Postform from "@/components/post-form";
 
 
