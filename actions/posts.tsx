@@ -37,7 +37,7 @@ export async function createPost(state : PostState,formData: FormData){
   let imageUrl;
   
   try{
-    imageUrl = await uploadImage(image as File);
+    imageUrl = await uploadImage(image);
   }catch(error) {
     throw new Error('Image upload failed. Image not uploaded')
   }
@@ -49,6 +49,7 @@ export async function createPost(state : PostState,formData: FormData){
     userId:1
   })
 
+  revalidatePath('/', 'layout')
   redirect('/feed')
   }
 
