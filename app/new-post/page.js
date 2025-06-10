@@ -1,10 +1,6 @@
-import { useFormState } from "react-dom"
-
 export default function NewPostPage() {
-
-  "use server";
-
   async function createPost(formData){
+      "use server";
   const title = formData.get('title');
   const image = formData.get('image');
   const content = formData.get('content');
